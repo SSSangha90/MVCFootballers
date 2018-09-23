@@ -1,0 +1,38 @@
+﻿@model MVCFootballers.Models.Footballer
+
+@{
+    ViewBag.Title = "Delete";
+}
+<section class="deleteSection">
+    <h2 class="deleteTitle">Delete</h2>
+    <hr />
+    <h3 class="deleteWarning">Are you sure you wish to delete this player?</h3>
+        <dl class="player-info">
+            <dt>@Html.DisplayNameFor(f => f.Name)</dt>
+            <dd>@Html.DisplayFor(f => f.Name)</dd>
+
+            <dt>@Html.DisplayNameFor(f => f.Age)</dt>
+            <dd>@Html.DisplayFor(f => f.Age)</dd>
+
+            <dt>@Html.DisplayNameFor(f => f.Position)</dt>
+            <dd>@Html.DisplayFor(f => f.Position)</dd>
+
+            <dt>@Html.DisplayNameFor(f => f.Value)</dt>
+            <dd>@Html.DisplayFor(f => f.Value)</dd>
+
+            @*<dt>@Html.DisplayNameFor(f => f.ImageUrl)</dt>
+              <dd>@Html.DisplayFor(f => f.ImageUrl)</dd>*@
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="">
+                <div class="deleteButton">
+                    <input type="submit" class="btn btn-default" value="Delete" />
+                </div>
+            </div>
+        }
+
+    @Html.ActionLink("Back to squad", "Index")
+</section>

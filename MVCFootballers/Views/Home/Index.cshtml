@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MVCFootballers.Models.Footballer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+   
+        <h2><b>Man Utd Players</b></h2>
+        @Html.ActionLink("Add new player", "Add")
+        @using (Html.BeginForm())
+        {
+            <p>
+                <span class="pos">Positiion:</span> @Html.DropDownList("playerPosition", "All")
+                <span class="pos">Name:</span> @Html.TextBox("SearchString")
+                <input type="submit" value="Filter" />
+            </p>
+        }
+
+</body>
+
+</html>
+
+<table class="table">
+    @*Column headings for the table*@
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)<p>(million)</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(f => item.Name)</td>
+            <td>@Html.DisplayFor(f => item.Age)</td>
+            <td>@Html.DisplayFor(f => item.Position)</td>
+            <td>@Html.DisplayFor(f => item.Value)</td>
+            @*<td>@Html.DisplayFor(f => item.ImageUrl)</td>*@
+            <td><img src="@Url.Content(item.ImageUrl)" height="100" width="100" /></td>
+
+            @*<td>@Html.RadioButton("isLike", true, true) Like</td>
+                <td>@Html.RadioButton("isLike", false, false) DisLike</td>*@
+            <td>
+            <b>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PlayersID })
+                @Html.ActionLink("Details", "Details", new { id = item.PlayersID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.PlayersID })
+            </b>
+            </td>
+        </tr>
+    }
+</table>
+
+
+

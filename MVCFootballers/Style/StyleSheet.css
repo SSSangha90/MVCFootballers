@@ -1,0 +1,81 @@
+﻿.manutd-logo{
+    height: 50px;
+    width: auto;
+    float: left;
+    padding: 10px 0 10px 0;
+}
+
+body {
+    background: linear-gradient(rgba(230, 19, 19, 0.95), rgba(8, 8, 8, 0.92));
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+table {
+    background: linear-gradient(rgba(74, 60, 60, 0.52), rgba(47, 44, 44)), url('../Images/old-trafford.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr{
+    color: black;
+}
+
+th{
+    color: white;
+}
+
+tr > td{
+    color: white;
+}
+
+.companyLtd{
+    color: white;
+}
+
+dt, dd{
+    color: black;
+}
+
+.editSection, td{
+    color: black;
+}
+
+.deleteButton{
+    padding-bottom: 5px;
+    padding-top: -15px;
+}
+
+.deleteSection, .detailsSection {
+    height:auto;
+}
+
+.editSection{
+    height: auto;
+}
+
+.whiteLabel
+{
+    color: white;
+}
+
+.addTitle, .addPlayer, .editTitle, .editPlayer, .detailsTitle, .detailsPlayer, .deleteTitle, .deleteWarning, .player-info dt, .player-info dd, b {
+    color: white;
+}
+
+.pos{
+    color: white !important;
+}
+
+
+@media screen and (min-width: 1100px){
+#youtube {
+    float: right;
+    margin-top: -15%;
+}
+}
+
+
+
+

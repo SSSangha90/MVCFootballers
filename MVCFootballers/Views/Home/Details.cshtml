@@ -1,0 +1,36 @@
+﻿@model MVCFootballers.Models.Footballer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="detailsSection">
+    <h2 class="detailsTitle">Details</h2>
+    <h4 class="detailsPlayer">Player</h4>
+    <hr />
+    <dl class="player-info">
+        <dt>@Html.DisplayNameFor(f => f.Name)</dt>
+        <dd>@Html.DisplayFor(f => f.Name)</dd>
+
+        <dt>@Html.DisplayNameFor(f => f.Age)</dt>
+        <dd>@Html.DisplayFor(f => f.Age)</dd>
+
+        <dt>@Html.DisplayNameFor(f => f.Position)</dt>
+        <dd>@Html.DisplayFor(f => f.Position)</dd>
+
+        <dt>@Html.DisplayNameFor(f => f.Value)</dt>
+        <dd>@Html.DisplayFor(f => f.Value)</dd>
+
+        @*<dt>@Html.DisplayNameFor(f => f.ImageUrl)</dt>
+            <dd>@Html.DisplayFor(f => f.ImageUrl)</dd>*@
+        
+    </dl>
+  
+    <iframe id="youtube" width="360" height="200" src=@Html.DisplayFor(f => f.VideoUrl) frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        <p>
+        @Html.ActionLink("Edit Record", "Edit", new { id = Model.PlayersID }) |
+        @Html.ActionLink("Back to squad", "Index")
+        </p>
+    
+</section>
